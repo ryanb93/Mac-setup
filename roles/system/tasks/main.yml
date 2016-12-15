@@ -1,6 +1,13 @@
 ---
+- vars_prompt:
+  - name: "mas_email"
+    prompt: "Enter email for Mac App Store"
+    private: no
+  - name: "mas_password"
+    prompt: "Enter password for Mac App Store"
+    private: yes
+
 - include: defaults.yml
 - include: shell.yml
 - include: vim.yml
-- include: databases.yml
 - include: languages.yml

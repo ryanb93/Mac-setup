@@ -11,7 +11,6 @@
     - homebrew/science
     - homebrew/versions
     - nviennot/tmate
-    - phinze/cask
 
 - name: Defaults | Update Homebrew & Taps
   homebrew: update_homebrew=yes upgrade_all=yes
@@ -22,7 +21,6 @@
       - ansible
       - autojump
       - automake
-      - brew-cask
       - cloc
       - coreutils
       - ctags
@@ -35,17 +33,23 @@
       - gpg
       - htop-osx
       - imagemagick
-      - jmeter
+      - mas
+      - maven
+      - nmap
       - openssl
-      - phantomjs
-      - qt5
       - reattach-to-user-namespace
+      - sbt
+      - scala
+      - sox
       - the_silver_searcher
+      - thefuck
       - tig
-      - tmate
       - tmux
-      - v8
+      - vim
       - wget
+      - zsh
+      - zsh-completions
+      - zsh-syntax-highlighting
 
 - name: Defaults | Install Homebrew casks
   homebrew_cask: name={{ item }} state=installed

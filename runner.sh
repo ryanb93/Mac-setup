@@ -24,4 +24,5 @@ if [[ ! -x /usr/local/bin/ansible ]]; then
   brew install ansible
 fi
 
+ansible-galaxy install -r requirements.yml
 ansible-playbook main.yml -i hosts

@@ -1,0 +1,50 @@
+---
+- name: Apps | Install Homebrew casks
+  homebrew_cask: name={{ item }} state=installed
+  ignore_errors: true
+  with_items:
+    - airflow
+    - appcleaner
+    - audacity
+    - betterzipql
+    - caffeine
+    - coconutbattery
+    - docker
+    - firefox
+    - flux
+    - hexfiend'
+    - hipchat
+    - insomniax
+    - intellijidea'
+    - iterm2
+    - java
+    - littlesnitch'
+    - mou
+    - nordvpn
+    - qlcolorcode
+    - qlmarkdown
+    - qlprettypatch
+    - qlstephen
+    - quicklookcsv'
+    - quicklookjson'
+    - runescape
+    - sourcetree
+    - spotify
+    - steam
+    - sublimetext'
+    - suspiciouspackage'
+    - transmission
+    - unrarx
+    - virtualbox
+    - vlc
+    - webpquicklook
+
+- name: Apps | Install Mac App Store apps
+  mas_installed_app_ids:
+    - 972028355 # Micro Snitch
+    - 552383089 # Dashlane
+    - 409201541 # Pages
+    - 497799835 # Xcode
+    - 463243494 # Kopypasta
+    - 585829637 # Todoist
+    - 409203825 # Numbers

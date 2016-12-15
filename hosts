@@ -1,2 +1,2 @@
-[danielz-machine]
+[ryan-machine]
 localhost ansible_connection=local

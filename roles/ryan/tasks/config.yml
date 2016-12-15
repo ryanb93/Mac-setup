@@ -1,0 +1,70 @@
+---
+- name: Config | Git | Configure name
+  command: git config --global user.name "Ryan Burke"
+
+- name: Config | Git | Configure email
+  command: git config --global user.email "ryanb-93@hotmail.co.uk"
+
+- name: Config | Git | Configure push
+  command: git config --global push.default simple
+
+- name: Config | Git | Configure color
+  command: git config --global color.ui true
+
+- name: Config | Git | Configure editor
+  command: git config --global core.editor "/usr/local/bin/vim"
+
+# iTerm2
+
+- name: Config | iTerm2 | Remove old plist
+  file: path="~/Library/Preferences/com.googlecode.iterm2.plist"
+        state=absent
+
+- name: Config | iTerm2 | Remove plist cache
+  command: "defaults read com.googlecode.iterm2"
+  ignore_errors: true
+
+- name: Config | iTerm2 | Copy plist
+  copy: src="com.googlecode.iterm2.plist.xml"
+        dest="~/Library/Preferences/com.googlecode.iterm2.plist"
+
+- name: Config | iTerm2 | Conver plist to binary
+  command: "plutil -convert binary1 ~/Library/Preferences/com.googlecode.iterm2.plist"
+
+# OSX
+
+- name: Config | OSX | Disable app quarantine window
+  command: "defaults write com.apple.LaunchServices LSQuarantine -bool false"
+
+- name: Config | OSX | Check everyday for software updates
+  command: "defaults write com.apple.SoftwareUpdate ScheduleFrequency -int 1"
+
+- name: Config | OSX | Keyboard - Disable press and hold
+  command: "defaults write NSGlobalDomain ApplePressAndHoldEnabled -bool false"
+
+- name: Config | OSX | Keyboard - Blazingly fast key repeat
+  command: "defaults write NSGlobalDomain KeyRepeat -int 0"
+
+- name: Config | OSX | Keyboard - Enable tab in modal windows
+  command: "defaults write NSGlobalDomain AppleKeyboardUIMode -int 3"
+
+- name: Config | OSX | Trackpad - Right click
+  command: "defaults write com.apple.driver.AppleBluetoothMultitouch.trackpad TrackpadRightClick -bool true"
+
+- name: Config | OSX | AppleMail - Normal copy of e-mail addresses
+  command: "defaults write com.apple.mail AddressesIncludeNameOnPasteboard -bool false"
+
+- name: Config | OSX | Finder - Expand save panel
+  command: "defaults write NSGlobalDomain NSNavPanelExpandedStateForSaveMode -bool true"
+
+- name: Config | OSX | Finder - Expand save panel
+  command: "defaults write NSGlobalDomain NSNavPanelExpandedStateForSaveMode2 -bool true"
+
+- name: Config | OSX | Finder - Expand print panel
+  command: "defaults write NSGlobalDomain PMPrintingExpandedStateForPrint -bool true"
+
+- name: Config | OSX | Finder - Expand print panel
+  command: "defaults write NSGlobalDomain PMPrintingExpandedStateForPrint2 -bool true"
+
+- name: Config | OSX | Finder - Search from current folder
+  command: 'defaults write com.apple.finder FXDefaultSearchScope -string "SCcf"'
