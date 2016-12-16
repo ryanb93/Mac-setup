@@ -1,6 +1,6 @@
 ---
 - name: Dotfiles | Copy dotfiles
-  file: src="../files/lib/{{ item }}"
+  file: src="Mac-setup/roles/ryan/files/lib/{{ item }}"
         dest="~/{{ item }}"
         state="link"
   with_items:
