@@ -27,7 +27,6 @@
       - .irbrc
       - .rspec
       - .tmux.conf
-      - .vimrc
       - .zprofile
     mas_installed_app_ids:
       - 972028355 # Micro Snitch
