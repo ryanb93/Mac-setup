@@ -14,6 +14,16 @@
 - name: Defaults | Update Homebrew & Taps
   homebrew: update_homebrew=yes upgrade_all=yes
 
+- name: Defaults | Install Homebrew casks
+  homebrew_cask: name={{ item }} state=installed
+  with_items:
+    - caffeine
+    - little-snitch
+    - iterm2
+    - java
+    - unrarx
+    - virtualbox
+
 - name: Defaults | Install Homebrew packages
   homebrew: name={{ item }} state=upgraded
   with_items:
@@ -22,13 +32,10 @@
     - automake
     - cloc
     - coreutils
-    - ctags
     - curl
-    - exiftool
     - findutils
     - git
     - git-extras
-    - gnu-tar
     - gpg
     - htop-osx
     - imagemagick
@@ -49,13 +56,3 @@
     - zsh
     - zsh-completions
     - zsh-syntax-highlighting
-
-- name: Defaults | Install Homebrew casks
-  homebrew_cask: name={{ item }} state=installed
-  with_items:
-    - caffeine
-    - little-snitch
-    - iterm2
-    - java
-    - unrarx
-    - virtualbox
