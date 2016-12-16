@@ -1,3 +1,4 @@
 ---
 - include: apps.yml
 - include: config.yml
+- include: mas.yml

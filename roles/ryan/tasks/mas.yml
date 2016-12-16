@@ -1,0 +1,8 @@
+- name: Mac App Store | Check if logged in
+  command: mas account
+  ignore_errors: yes
+  register: account_is_logged_in
+
+- name: Mac App Store | Log out current user
+  command: mas logout
+  when: account_is_logged_in|failed
