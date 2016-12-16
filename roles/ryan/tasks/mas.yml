@@ -1,8 +1,22 @@
 - name: Mac App Store | Check if logged in
   command: mas account
-  ignore_errors: True
   register: account_is_logged_in
 
 - name: Mac App Store | Log out current user
   command: mas signout
   when: account_is_logged_in|succeeded
+
+- name: Mac App Store | Log out current user
+  command: mas signin --dialog {{ mas_email }}
+  when: account_is_logged_in|failure
+
+- name: Mac App Store | Install applications
+  command: mas install {{ item }}
+  with_items:
+    - 972028355 # Micro Snitch
+    - 552383089 # Dashlane
+    - 409201541 # Pages
+    - 497799835 # Xcode
+    - 463243494 # Kopypasta
+    - 585829637 # Todoist
+    - 409203825 # Numbers
