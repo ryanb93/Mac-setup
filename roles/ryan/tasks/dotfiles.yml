@@ -1,6 +1,6 @@
 ---
 - name: Dotfiles | Copy dotfiles
-  file: src="~/.ansible/roles/ryan/files/lib/{{ item }}"
+  file: src="../files/lib/{{ item }}"
         dest="~/{{ item }}"
         state="link"
   with_items:

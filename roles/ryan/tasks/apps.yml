@@ -11,24 +11,23 @@
     - docker
     - firefox
     - flux
-    - hexfiend
+    - hex-fiend
     - hipchat
     - insomniax
-    - intellijidea
-    - mou
+    - intellij-idea
     - nordvpn
     - qlcolorcode
     - qlmarkdown
     - qlprettypatch
     - qlstephen
-    - quicklookcsv
-    - quicklookjson
+    - quicklook-csv
+    - quicklook-json
     - runescape
     - sourcetree
     - spotify
     - steam
-    - sublimetext
-    - suspiciouspackage
+    - sublime-text
+    - suspicious-package
     - transmission
     - vlc
     - webpquicklook
