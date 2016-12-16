@@ -1,18 +1,3 @@
 ---
-- name: Dotfiles | Copy dotfiles
-  file: src="Mac-setup/roles/ryan/files/lib/{{ item }}"
-        dest="~/{{ item }}"
-        state="link"
-  with_items:
-    - .agignore
-    - .gemrc
-    - .gitconfig
-    - .gitignore
-    - .irbrc
-    - .rspec
-    - .tmux.conf
-    - .vimrc
-    - .zprofile
-
 - name: Dotfiles | Configure vim
   command: vim +PluginInstall +qall

@@ -12,13 +12,23 @@
       private: yes
 
   vars:
+  - vars:
     dotfiles_repo: https://github.com/ryanb93/dotfiles.git
     dotfiles_repo_accept_hostkey: yes
     dotfiles_repo_local_destination: ~/.dotfiles
     dotfiles_files:
-      - .functions
-      - .exports
       - .aliases
+      - .agignore
+      - .exports
+      - .functions
+      - .gemrc
+      - .gitconfig
+      - .gitignore
+      - .irbrc
+      - .rspec
+      - .tmux.conf
+      - .vimrc
+      - .zprofile
     mas_installed_app_ids:
       - 972028355 # Micro Snitch
       - 552383089 # Dashlane
@@ -30,8 +40,6 @@
 
   roles:
     - system
-    - ryan
     - geerlingguy.dotfiles
-    - name: geerlingguy.mas
-      when: mas_installed_app_ids
-
+    - ryan
+    - geerlingguy.mas
