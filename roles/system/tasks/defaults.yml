@@ -10,7 +10,6 @@
     - homebrew/dupes
     - homebrew/science
     - homebrew/versions
-    - nviennot/tmate
 
 - name: Defaults | Update Homebrew & Taps
   homebrew: update_homebrew=yes upgrade_all=yes
