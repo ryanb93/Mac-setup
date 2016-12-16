@@ -1,3 +1,0 @@
----
-- name: Dotfiles | Configure vim
-  command: vim +PluginInstall +qall
