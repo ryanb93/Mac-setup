@@ -1,12 +1,13 @@
 - name: Mac App Store | Check if logged in
   command: mas account
+  ignore_errors: yes
   register: account_is_logged_in
 
 - name: Mac App Store | Log out current user
   command: mas signout
   when: account_is_logged_in|succeeded
 
-- name: Mac App Store | Log out current user
+- name: Mac App Store | Log in
   command: mas signin --dialog {{ mas_email }}
   when: account_is_logged_in|failure
 
