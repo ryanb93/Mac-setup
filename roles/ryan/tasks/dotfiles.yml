@@ -16,12 +16,3 @@
 
 - name: Dotfiles | Configure vim
   command: vim +PluginInstall +qall
-
-- name: Dotfiles | Clone dotfiles
-dotfiles_repo: https://github.com/ryanb93/dotfiles.git
-dotfiles_repo_accept_hostkey: yes
-dotfiles_repo_local_destination: ~/.dotfiles
-dotfiles_files:
-  - .functions
-  - .exports
-  - .aliases
