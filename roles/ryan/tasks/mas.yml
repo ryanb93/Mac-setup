@@ -3,5 +3,5 @@
   register: account_is_logged_in
 
 - name: Mac App Store | Log out current user
-  command: mas logout
+  command: mas signout
   when: account_is_logged_in|succeeded
