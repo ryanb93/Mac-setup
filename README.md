@@ -7,6 +7,6 @@ An ansible script to fully provision my machine. Tested on macOS Sierra.
 
 ####Prerequisites
 
-- Log into the Mac App store and accept any two-factor authentication.
+- Sign in to Mac App Store
 - `git clone https://github.com/ryanb93/Mac-setup.git ~/.ansible`
 - `cd ~/.ansible && ./runner.sh`

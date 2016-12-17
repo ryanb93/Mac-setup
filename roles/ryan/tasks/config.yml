@@ -16,20 +16,15 @@
 
 # iTerm2
 
-- name: Config | iTerm2 | Remove old plist
-  file: path="~/Library/Preferences/com.googlecode.iterm2.plist"
-        state=absent
+- name: Config | iTerm2 | Set custom prefs folder
+  command: "defaults write com.googlecode.iterm2 'PrefsCustomFolder' -string '/Users/ryan/.dotfiles/iterm'"
 
-- name: Config | iTerm2 | Remove plist cache
+- name: Config | iTerm2 | Set enable custom prefs
+  command: "defaults write com.googlecode.iterm2 'LoadPrefsFromCustomFolder' -bool true"
+
+- name: Config | iTerm2 | Reload iTerm2 defaults
   command: "defaults read com.googlecode.iterm2"
   ignore_errors: true
-
-- name: Config | iTerm2 | Copy plist
-  copy: src="com.googlecode.iterm2.plist.xml"
-        dest="~/Library/Preferences/com.googlecode.iterm2.plist"
-
-- name: Config | iTerm2 | Conver plist to binary
-  command: "plutil -convert binary1 ~/Library/Preferences/com.googlecode.iterm2.plist"
 
 # OSX
 
